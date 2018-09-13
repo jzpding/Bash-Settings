@@ -1,0 +1,4 @@
+#.bash_env
+#$Id: //hw/nv/env/.bash_env#4 $
+#!/bin/bash
+(set -o igncr) 2>/dev/null && set -o igncr; # Ignore Windows line endings
