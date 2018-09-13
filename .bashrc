@@ -251,19 +251,4 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 
-
-
-
 # Added stuff
-export PATH="$PATH:/home/utils/bin"
-
-export P4ROOT="/home/scratch.jacding_sw/jacding-ws1"
-export P4CLIENT="jacding-ws1"
-export P4PORT="p4sw:2006"
-export P4USER="jacding"
-export LD_LIBRARY_PATH="/usr/lib"
-export LSF_SERVERDIR="/usr/local/lsf/etc"
-export Python3="/home/utils/Python-3.0.1/bin/"
-
-#export P4ROOT="/home/scratch.jacding_sw/jacding-r415"
-#export P4CLIENT="jacding-r415"
