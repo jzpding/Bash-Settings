@@ -3,6 +3,11 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'monokai t)
 
+;; CTAGS
+;; Use ctags -e -R [*.cpp *.hpp *.h] (optional file extensions)
+;; -e is for emacs rather than Vim
+;;(setq path-to-ctags "/opt/local/bin/ctags") ;; <- your ctags path here
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
