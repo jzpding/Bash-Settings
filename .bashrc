@@ -105,12 +105,12 @@ On_IWhite='\e[0;107m'   # White
 
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null
 then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
 else
-	color_prompt=
+    color_prompt=
 fi
 
 #HOST_COLOR=${UGreen}
@@ -255,15 +255,36 @@ fi
 
 
 # Added stuff
-export PATH="$PATH:/home/utils/bin"
-
 export P4ROOT="/home/scratch.jacding_sw/jacding-ws1"
 export P4CLIENT="jacding-ws1"
+#export P4PORT="p4sw:2006"
 export P4PORT="p4sw:2006"
 export P4USER="jacding"
-export LD_LIBRARY_PATH="/usr/lib"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/home/jacding/bin/lib"
 export LSF_SERVERDIR="/usr/local/lsf/etc"
+export LSF_LIBDIR="/usr/local/lsf/lib"
 export Python3="/home/utils/Python-3.0.1/bin/"
 
-#export P4ROOT="/home/scratch.jacding_sw/jacding-r415"
-#export P4CLIENT="jacding-r415"
+export MODS_RUNSPACE="/home/scratch.jacding_sw/jacding-ws1/sw/dev/gpu_drv/chips_a/diag/mods/runspace"
+
+export PATH="$PATH:/home/utils/bin:$P4ROOT/sw/tools/unix/hosts/Linux-x86/unix-build/bin:/home/nv/bin:/usr/local/lsf/bin:/home/jacding/bin/bin"
+
+#FMOD director
+#export FMODDIR="/home/scratch.jacding_sw/galit1_fmodel"
+export FMODDIR="/home/scratch.jacding_sw/gvlit1_fmodel"
+
+#Add FMOD libraries to LD_LIBRARY_PATH
+export LD_LIBRARY_PATH="$FMODDIR/fmod/lib/Linux_x86_64:$FMODDIR/clib/Linux_x86_64:$MODS_RUNSPACE:$LD_LIBRARY_PATH"
+
+
+# Get rid of warnings
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Build variables
+export INCLUDE_RMTEST=true
+export INCLUDE_MDIAG=true
+export INCLUDE_NVWATCH=true
+export INCLUDE_GPU=true
+export INCLUDE_CUDA=true
+export BUILD_OS=sim
