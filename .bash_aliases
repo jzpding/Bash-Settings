@@ -61,6 +61,7 @@ alias storage1='cd /home/scratch.jacding_sw_1'
 
 alias soe='cd /home/scratch.jacding_sw/jacding-ws1/sw/dev/gpu_drv/chips_a/uproc/soe/src'
 alias mods='cd /home/scratch.jacding_sw/jacding-ws1/sw/dev/gpu_drv/chips_a/diag/mods'
+alias nvswitch='cd /home/scratch.jacding_sw/jacding-ws1/sw/dev/gpu_drv/chips_a/drivers/nvswitch/kernel/'
 alias hvalavala='cd /home/scratch.hvalavala_gpu/trees/nvgpu_amap/hw/nvgpu/diag/testgen/switch_sanity_jd/tests/ampere_a_ogtest/00/00/01/000001'
 
 alias qbash='qsub -Is -q o_cpu_16G_4H --projectMode direct -P sw_inf_sw_mods bash'

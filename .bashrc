@@ -271,7 +271,7 @@ export PATH="$PATH:/home/utils/bin:$P4ROOT/sw/tools/unix/hosts/Linux-x86/unix-bu
 
 #FMOD director
 #export FMODDIR="/home/scratch.jacding_sw/galit1_fmodel"
-export FMODDIR="/home/scratch.jacding_sw/gvlit1_fmodel"
+export FMODDIR="/home/scratch.jacding_sw/glit1_fmodel"
 
 #Add FMOD libraries to LD_LIBRARY_PATH
 export LD_LIBRARY_PATH="$FMODDIR/fmod/lib/Linux_x86_64:$FMODDIR/clib/Linux_x86_64:$MODS_RUNSPACE:$LD_LIBRARY_PATH"

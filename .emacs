@@ -10,7 +10,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("2925ed246fb757da0e8784ecf03b9523bccd8b7996464e587b081037e0e98001" default))))
+    ("2925ed246fb757da0e8784ecf03b9523bccd8b7996464e587b081037e0e98001" default)))
+ '(inhibit-startup-screen t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -18,8 +19,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-(add-hook 'c-mode-hook
-          (lambda () (add-to-list 'write-file-functions 'whitespace-cleanup)))
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq-default tab-width 4
           c-basic-offset 4
@@ -35,6 +35,9 @@
     (if (> tab-count space-count) (setq indent-tabs-mode t))))
 
 (infer-indentation-style)
+
+;; auto update files that have changed on disk
+(global-auto-revert-mode t)
 
 ;; column-marker -- highlight text when it crosses column 80
 (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -52,7 +55,6 @@
          (gtags-mode 1)
          ))
 
-
 (setq c++-mode-hook
       '(lambda ()
          (gtags-mode 1)))
@@ -62,6 +64,6 @@
          (local-set-key "\M-t" 'gtags-find-tag)
          (local-set-key "\M-r" 'gtags-find-rtag)
          (local-set-key "\M-s" 'gtags-find-symbol)
+         (local-set-key "\M-f" 'gtags-find-file)
          (local-set-key "\C-t" 'gtags-pop-stack)
          ))
-
